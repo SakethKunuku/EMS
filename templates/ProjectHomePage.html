@@ -1,0 +1,323 @@
+{% extends 'Navbar/ProjectNavbar.html' %}
+{% load static %}
+<br><br><br>
+<html lang="en">
+
+{% block body %}
+<head>
+    <meta charset="UTF-8">
+    <title>Project Home Page</title>
+
+
+    <style>
+        body {
+            /* Your existing styles for body here */
+        }
+
+        #about-us {
+            background-color: #e9f0f5;
+            padding: 40px;
+        }
+
+        .about-us-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .about-us-text {
+            flex: 1;
+            max-width: 600px;
+            text-align: left;
+        }
+
+        .about-us-text h2 {
+            color: #3c4858;
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        .about-us-text p {
+            font-size: 18px;
+            line-height: 1.5;
+            color: #495057;
+        }
+
+        .about-us-text ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .about-us-text li {
+            margin-bottom: 10px;
+        }
+
+        .about-us-text .highlight {
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .about-us-image {
+            flex: 1;
+            margin-right: 40px;
+        }
+
+        .about-us-image img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .event-card-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .event-card-section {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .card {
+            width: 190px;
+            height: 254px;
+            background: #07182E;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            margin-right: 20px;
+        }
+
+        .card h2 {
+            z-index: 1;
+            color: white;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            z-index: 1;
+            color: white;
+            font-size: 14px;
+            text-align: center;
+            padding: 0 10px;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            width: 100px;
+            background-image: linear-gradient(180deg, rgb(0, 183, 255), rgb(255, 48, 255));
+            height: 130%;
+            animation: rotBGimg 3s linear infinite;
+            transition: all 0.2s linear;
+        }
+
+        @keyframes rotBGimg {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .card::after {
+            content: '';
+            position: absolute;
+            background: #07182E;
+            inset: 5px;
+            border-radius: 15px;
+        }
+
+        #contact-us {
+            background-color: #f9f9f9;
+            padding: 40px;
+            margin-top: 40px;
+        }
+
+        .contact-details {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-details div {
+            width: 45%;
+            margin-bottom: 20px;
+        }
+
+        .contact-details h2 {
+            color: #333;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+
+        .contact-details p {
+            color: #555;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+  <br><br>
+    <div class="wrapper">
+      <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="{% static 'images/Home/klsamyak1.jpg' %}" class="d-block w-100" alt="klsamyak1" style="max-height: 680px;">
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'images/Home/klsurabhi1.jpg' %}" class="d-block w-100" alt="klsurabhi1" style="max-height: 680px;">
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'images/Home/klcinecarnival1.jpg' %}" class="d-block w-100" alt="klcinecarnival1" style="max-height: 680px;">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+<br><br><br>
+      <!-- Main Content -->
+      <div class="content">
+        <section id="about-us">
+          <div class="about-us-container">
+            <div class="about-us-image">
+              <img src="{% static 'images/aboutus.png' %}" alt="About Us Image">
+            </div>
+
+            <div class="about-us-text">
+              <h2>About Us</h2>
+              <p>Welcome to Event Management System, where we turn dreams into extraordinary events! Our passion for creating unforgettable experiences sets us apart in the world of event management.</p>
+
+              <p>At the heart of our approach is a commitment to innovation and excellence. We blend creativity with meticulous planning to design events that captivate and inspire. From elegant weddings to dynamic corporate gatherings, we bring a touch of magic to every occasion.</p>
+
+              <p>Why choose EMS?</p>
+
+              <ul>
+                <li><span class="highlight">Creative Expertise:</span> Our team of talented designers and planners bring fresh ideas and creativity to the table. We transform your vision into a reality that exceeds expectations.</li>
+                <li><span class="highlight">Attention to Detail:</span> Every detail matters. We obsess over the finer points to ensure a seamless and flawless event execution, leaving you stress-free and able to enjoy the moment.</li>
+                <li><span class="highlight">Client-Centric Approach:</span> Your satisfaction is our priority. We collaborate closely with you, listening to your needs and preferences to tailor each event to perfection.</li>
+                <li><span class="highlight">Innovation:</span> Stay ahead in the world of events with our innovative solutions. We embrace the latest trends and technologies to bring a modern and fresh perspective to your events.</li>
+              </ul>
+
+              <p>Join us on a journey of creativity, dedication, and celebration. Let EMS be the architect of your next memorable event!</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Event Cards Section -->
+        <section id="list-of-events">
+          <h2>List of Events</h2>
+          <div class="event-card-section">
+            <div class="card">
+              <img src="{% static 'images/samyak.jpg' %}" alt="Samyak Event">
+              <h2>Samyak</h2>
+              <button style="color:red" onclick="window.location.href='/samyak-info'">More Info</button>
+            </div>
+
+            <div class="card">
+              <img src="{% static 'images/surabhi.jpg' %}" alt="Surabhi Event">
+              <h2>Surabhi</h2>
+              <button onclick="window.location.href='/surabhi-info'">More Info</button>
+            </div>
+
+            <div class="card">
+              <img src="{% static 'images/event3.jpg' %}" alt="Event 3">
+              <h2>Event 3</h2>
+              <button onclick="window.location.href='/event3-info'">More Info</button>
+            </div>
+
+            <div class="card">
+              <img src="{% static 'images/event4.jpg' %}" alt="Event 4">
+              <h2>Event 4</h2>
+              <button onclick="window.location.href='/event4-info'">More Info</button>
+            </div>
+
+            <!-- Add more cards as needed -->
+          </div>
+
+          <div class="event-card-section">
+            <div class="card">
+              <img src="{% static 'images/samyak.jpg' %}" alt="Samyak Event">
+              <h2>Samyak</h2>
+              <button onclick="window.location.href='/samyak-info'">More Info</button>
+            </div>
+
+            <div class="card">
+              <img src="{% static 'images/surabhi.jpg' %}" alt="Surabhi Event">
+              <h2>Surabhi</h2>
+              <button onclick="window.location.href='/surabhi-info'">More Info</button>
+            </div>
+
+            <div class="card">
+              <img src="{% static 'images/event3.jpg' %}" alt="Event 3">
+              <h2>Event 3</h2>
+              <button onclick="window.location.href='/event3-info'">More Info</button>
+            </div>
+
+            <div class="card">
+              <img src="{% static 'images/event4.jpg' %}" alt="Event 4">
+              <h2>Event 4</h2>
+              <button onclick="window.location.href='/event4-info'">More Info</button>
+            </div>
+
+            <!-- Add more cards as needed -->
+          </div>
+        </section>
+
+
+        <!-- Contact Us Section -->
+        <section id="contact-us">
+          <h2>Contact Us</h2>
+          <div class="contact-details">
+            <div>
+              <h2>Location</h2>
+              <p>Vaddeswaram,Guntur</p>
+            </div>
+
+            <div>
+              <h2>Email</h2>
+              <p>sakethkunuku205@gmail.com</p>
+            </div>
+
+            <div>
+              <h2>Phone</h2>
+              <p>+91 7680833146</p>
+            </div>
+
+            <div>
+              <h2>Social Media</h2>
+              <p>Follow us on Facebook, Twitter, and Instagram</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Add more sections as needed -->
+
+      </div>
+    </div>
+      </div>
+    </div>
+  {% endblock %}
+</body>
+</html>

@@ -1,0 +1,121 @@
+{% extends 'Navbar/EventManagerNavbar.html' %}
+{% load static %}
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% block body %}
+  <style>
+    .card-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      padding: 20px;
+    }
+
+    .card {
+      box-sizing: border-box;
+      width: 190px;
+      background: rgba(217, 217, 217, 0.58);
+      border: 1px solid white;
+      box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+      backdrop-filter: blur(6px);
+      border-radius: 17px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.5s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      user-select: none;
+      font-weight: bolder;
+      color: black;
+      margin: 10px;
+      text-decoration: none;
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+      border-radius: 17px;
+      object-fit: cover;
+    }
+
+    .card:hover {
+      border: 1px solid black;
+      transform: scale(1.05);
+    }
+
+    .card:active {
+      transform: scale(0.95) rotateZ(1.7deg);
+    }
+
+    .card-text {
+      margin-top: 10px;
+    }
+
+    .back-button {
+      margin: 10px;
+      padding: 10px;
+      background-color: #3498db;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      display: inline-block;
+    }
+
+    .back-button:hover {
+      background-color: #2980b9;
+    }
+
+    .back-button:active {
+      background-color: #216a94;
+    }
+  </style>
+</head>
+<body>
+  <!-- Back button to go back -->
+  <a href="#" class="back-button" onclick="history.back()">Back</a>
+
+  <!-- Card container -->
+  <div class="card-container">
+    <a href="https://klefsamyak.in/" class="card">
+      <img src="{% static 'images/Universities/kl university.jpg' %}" alt="Card Image">
+      <div class="card-text">STEPCONE</div>
+    </a>
+    <!-- Add more cards as needed -->
+
+
+    <a href="https://klefsamyak.in/" class="card">
+      <img src="{% static 'images/Universities/KLH.jpg' %}" alt="Card Image">
+      <div class="card-text">KALAKSHETRA</div>
+    </a>
+    <a href="https://klefsamyak.in/" class="card">
+      <img src="{% static 'images/Universities/vit chennai.jpeg' %}" alt="Card Image">
+      <div class="card-text">ZENITH</div>
+    </a>
+  </div>
+
+      <div class="card-container">
+    <a href="https://klefsamyak.in/" class="card">
+      <img src="{% static 'images/Universities/vit ap.jpeg' %}" alt="Card Image">
+      <div class="card-text">VLSI</div>
+    </a>
+
+
+
+
+    <a href="https://klefsamyak.in/" class="card">
+      <img src="{% static 'images/Universities/srm.jpg' %}" alt="Card Image">
+      <div class="card-text">CSI</div>
+    </a>
+
+
+
+  </div>
+{% endblock %}
+</body>
+</html>

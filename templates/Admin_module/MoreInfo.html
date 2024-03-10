@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Management System</title>
+  <style>
+    /* Add your advanced CSS styles here */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .event-container {
+      max-width: 800px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Add more styles for your elements as needed */
+
+  </style>
+</head>
+<body>
+  <div class="event-container">
+    <h1>Annual Tech Conference</h1>
+    <p>Date: <span id="eventDate">March 10-12, 2024</span></p>
+    <p>Location: <span id="eventLocation">Tech Expo Center</span></p>
+    <p>Description: <span id="eventDescription">Join us for our annual tech conference featuring keynote speakers, workshops, and networking opportunities. Explore the latest trends in technology and connect with industry professionals.</span></p>
+
+    <!-- Additional Information -->
+    <p>Speakers: <span id="eventSpeakers">John Doe, Jane Smith, Mark Johnson</span></p>
+    <p>Agenda: <span id="eventAgenda">Day 1 - Keynote Address, Day 2 - Workshops, Day 3 - Networking</span></p>
+
+    <button id="registerButton">Register</button>
+  </div>
+
+  <script>
+    // Add your advanced JavaScript code here
+    document.getElementById('registerButton').addEventListener('click', function() {
+      alert('Registration successful!');
+      // Add more functionality as needed
+    });
+  </script>
+</body>
+</html>

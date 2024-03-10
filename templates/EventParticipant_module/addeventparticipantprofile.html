@@ -1,0 +1,60 @@
+{% extends 'Navbar/EventParticipantNavbar.html' %}
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <title>EVENT APPLICATION FORM</title>
+</head>
+<body>
+    {% block body %}
+
+<div class="container mt-5">
+    <h2>JOB APPLICATION FORM</h2>
+    <form method="POST" action="{% url 'EventParticipant_module:submit_form' %}">
+        {% csrf_token %}
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="firstName">First Name</label>
+                <input type="text" class="form-control" name="first_name" id="first_Name" placeholder="Enter your first name">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="lastName">Last Name</label>
+                <input type="text" class="form-control" name="last_name" id="last_Name" placeholder="Enter your last name">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="phoneNumber">Phone Number</label>
+                <input type="text" class="form-control" name="phone_number" id="phoneNumber" placeholder="Enter your phone number">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" class="form-control" name="address" id="address" placeholder="Enter your address">
+        </div>
+
+        <div class="form-group">
+            <label for="university">University</label>
+            <input type="text" class="form-control" name="university" id="university" placeholder="Enter your university">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock %}
+
+    <!-- Add Bootstrap JS and Popper.js scripts for responsiveness -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

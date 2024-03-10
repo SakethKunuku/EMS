@@ -1,0 +1,71 @@
+{% extends 'Navbar/EventManagerNavbar.html' %}
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Event Post</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" integrity="sha384-eK+sWiFmajm8U+H8E1vNDOkfgccRcVc7xOZldEa8fQPD5L8DAkDYgic/vcg+h/eJ" crossorigin="anonymous">
+</head>
+<body>
+{% block body %}
+<div class="container mt-5">
+    <div class="card p-4">
+        <h1 class="text-center mb-4">Event Posts</h1>
+        <h3 class="text-center mb-4">Event Details Form</h3>
+        <form method="post" action="{% url 'EventManager_module:add_event_details' %} " class="needs-validation" novalidate>
+            {% csrf_token %}
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label for="EventTitle" style="font-weight: bold; color: black" class="form-label">Event Title</label>
+                    <input type="text" class="form-control" name="EventTitle" id="EventTitle" placeholder="Enter the Event Title" required>
+                    <div class="invalid-feedback">Please provide an Event Title.</div>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="EventType" style="font-weight: bold; color: black" class="form-label">Event Type</label>
+                    <select class="form-select" name="EventType" id="EventType" required>
+                        <option value="" selected disabled>Select Event Type</option>
+                        <option value="FullTime">Full-Time</option>
+                        <option value="PartTime">Part-Time</option>
+                        <option value="Contract">Contract</option>
+                    </select>
+                    <div class="invalid-feedback">Please select an Event Type.</div>
+                </div>
+                <div class="col-md-6">
+                    <label for="benefits" style="font-weight: bold; color: black" class="form-label">Benefits</label>
+                    <textarea class="form-control" name="benefits" id="benefits" rows="2" placeholder="Enter the Benefits" required></textarea>
+                    <div class="invalid-feedback">Please provide Benefits information.</div>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="EventLocation" style="font-weight: bold; color: black" class="form-label">Event Location</label>
+                    <input type="text" class="form-control" name="EventLocation" id="EventLocation" placeholder="Enter the Event Location" required>
+                    <div class="invalid-feedback">Please provide Event Location information.</div>
+                </div>
+                <div class="col-md-6">
+                    <label for="RequiredSkills" style="font-weight: bold; color: black" class="form-label">Required Skills</label>
+                    <input type="text" class="form-control" name="RequiredSkills" id="RequiredSkills" placeholder="Enter the Required Skills" required>
+                    <div class="invalid-feedback">Please provide Required Skills information.</div>
+                </div>
+
+                 <div class="col-md-6">
+                    <label for="RegistrationAmount" style="font-weight: bold; color: black"  class="form-label">Registration Amount</label>
+                    <input type="text" class="form-control" name="RegistrationAmount" id="RegistrationAmount" placeholder="Enter the Amount for Registration" required>
+                    <div class="invalid-feedback">Please provide Registration Amount information.</div>
+                </div>
+                <div class="col-12 text-center">
+                    <button type="submit" style="font-weight: bold; color: white; background-color: black" class="btn btn-primary">Post The Event</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+<!-- Include Bootstrap JS and Popper.js files -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-3n9ZcZb4H5K0NvBZlMccVpCaFuGT8HzfrZ75PC0HSXI9RqbI0LMp5rGIExB1FcLb" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-Ql7e5S+gq24m4eOg1Lyc8Lod8iKu3WiHA+S+Gk5GQrLDa2Nl2kUy15rZus+BmK9U" crossorigin="anonymous"></script>
+</body>
+</html>

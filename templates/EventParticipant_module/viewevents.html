@@ -1,0 +1,50 @@
+{% extends 'Navbar/EventParticipantNavbar.html' %}
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Events</title>
+    <!-- Add Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        /* Additional styles for responsiveness */
+        .card {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    {% block body %}
+        <div class="container mt-5">
+            <h2>Event Details List</h2>
+            <div class="row">
+                {% for event_details in event_details_list %}
+                    <!-- Use a color class based on index for different colors -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ event_details.event_title }}</h5>
+                                <p class="card-text">
+                                    <strong>Registration Amount:</strong> {{ event_details.registration_amount }}<br>
+                                    <strong>Event Type:</strong> {{ event_details.get_event_type_display }}<br>
+                                    <strong>Benefits:</strong> {{ event_details.benefits }}<br>
+                                    <strong>Event Location:</strong> {{ event_details.event_location }}<br>
+                                    <strong>Required Skills:</strong> {{ event_details.required_skills }}
+                                </p>
+                                <a href="{% url 'EventParticipant_module:register_to_event' event_details.id %}" class="btn btn-success">Register to this Event</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endblock %}
+
+    <!-- Add Bootstrap JS and Popper.js scripts for responsiveness -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

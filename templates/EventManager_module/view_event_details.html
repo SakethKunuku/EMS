@@ -1,0 +1,33 @@
+{% extends 'Navbar/EventManagerNavbar.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block body %}
+<div class="container mt-5">
+    <div class="row">
+        {% for event_details in event_details_list %}
+           <div class = "col-md-4 mb-4">
+            <div class = "card">
+                <div class = "card-body">
+                    <h5 class = "card-title">{{event_details.event_title}}</h5>
+                    <p class = "card-text">Event Type: {{ event_details.get_event_type_display}}</p>
+                    <p class = "card-text">Benefits: {{ event_details.benefits}}</p>
+                    <p class = "card-text">Event Location: {{ event_details.event_location}}</p>
+                    <p class = "card-text">Required Skills: {{ event_details.required_skills}}</p>
+                    <p class = "card-text">Registration Amount: {{ event_details.registration_amount}}</p>
+                    <a href = "{% url 'EventManager_module:edit_event_details' event_details.id %}" class = "btn btn-primary">Edit</a>
+                    <a href = "{% url 'EventManager_module:delete_event_details' event_details.id %}" class = "btn btn-danger">Delete</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-3WUfgs4QdQmD1BG/LgABhSR+OU8T6ZrqLBNpBl8a03cGGuydYLOOH32EuyBp8+pC9OmiIfrCFCw5Y5xuBgCMEBQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+
+
+
+      .social-icons a i {
+        box-shadow: rgb(0 0 0 / 8%) 0px 4px 12px;
+        padding: 0.4rem 1rem 0.4rem 1rem;
+        border-radius: 3px;
+        font-size: 16px;
+        margin-right: 12px;
+        color: #82074a; /* Default color */
+    }
+
+    .social-icons a i.fa-facebook-f { color: #1877f2; } /* Facebook color */
+    .social-icons a i.fa-instagram { color: #bc2a8d; } /* Instagram color */
+    .social-icons a i.fa-linkedin-in { color: #0e76a8; } /* LinkedIn color */
+
+      /* Dropdown Styles */
+        .profile-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .profile-image {
+            width: 40px; /* Adjust as needed */
+            height: 40px; /* Adjust as needed */
+            border-radius: 50%; /* To make it circular */
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 120px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            top: 100%; /* Position the dropdown below the profile image */
+            right: 0; /* Align the dropdown to the right edge of the profile image */
+            animation: fadeIn 0.5s ease;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .profile-dropdown:hover .dropdown-content {
+            display: block;
+         }
+    /* footer section start */
+*{
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  -o-box-sizing:border-box;
+  -ms-box-sizing:border-box;
+  box-sizing:border-box;
+}
+body{
+  font-size:14px;
+  background: #fff;
+    max-width:1920px;
+    margin:0 auto;
+  overflow-x:hidden;
+  font-family: poppins;
+
+
+}
+#footer{
+  background: #f7f7f7;
+    padding: 3rem;
+  /* padding-top: 5rem; */
+  padding-top: 7rem;
+    padding-bottom: 80px;
+  background-image: url(https://arena.km.ua/wp-content/uploads/3538533.jpg);
+}
+#footer2{
+  background: #000;
+  padding: 3rem;
+  margin-top: 0px;
+  padding-top: 7rem;
+  padding-bottom: 80px;
+  background-image: url(../images/cards/v748-toon-111.png);
+
+}
+.logo-footer{
+  /* max-width: 300px; */
+}
+.social-links{
+  /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; */
+
+}
+.social-links h2{
+  padding-bottom: 15px;
+  font-size: 20px;
+    font-weight: 600;
+}
+.social-links img{
+  padding-bottom: 25px;
+}
+.social-icons{
+  /* display: flex;
+    gap: 3rem; */
+  display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  color: #777777;
+}
+.social-icons a{
+  /* font-size: 18px; */
+    /* background: #ffffff; */
+    /* box-shadow: rgb(0 0 0 / 8%) 0px 4px 12px;
+    padding: 0.4rem 1rem 0.4rem 1rem;
+    border-radius: 3px;
+  color: #82074a; */
+  /* margin-right: 18px; */
+  color: #777777;
+}
+.social-icons a:hover{
+  color: #000;
+}
+.social-icons a i{
+  box-shadow: rgb(0 0 0 / 8%) 0px 4px 12px;
+    padding: 0.4rem 1rem 0.4rem 1rem;
+    border-radius: 3px;
+    color: #82074a;
+  font-size: 16px;
+  margin-right: 12px;
+}
+li{
+  list-style: none;
+}
+.useful-link h2{
+  padding-bottom: 15px;
+  font-size: 20px;
+    font-weight: 600;
+}
+.useful-link img{
+  padding-bottom: 15px;
+}
+.use-links{
+  line-height: 32px;
+}
+.use-links li i{
+  font-size: 14px;
+    padding-right: 8px;
+    color: #898989;
+}
+.use-links li a{
+  color: #303030;
+    font-size: 15px;
+    font-weight: 500;
+  color: #777777;
+}
+.use-links li a:hover{
+  color: #000;
+}
+.address h2{
+  padding-bottom: 15px;
+  font-size: 20px;
+    font-weight: 600;
+}
+.address img{
+  padding-bottom: 15px;
+}
+.address-links li a{
+  color: #303030;
+    font-size: 15px;
+    font-weight: 500;
+  color: #777777;
+
+}
+.address-links li i{
+  font-size: 16px;
+    padding-right: 8px;
+  color: #82074a;
+
+}
+.address-links li i:nth-child(1){
+  padding-top: 9px;
+}
+.address-links .address1{
+  font-weight: 500;
+    font-size: 15px;
+  display: flex;
+}
+.address-links{
+      line-height: 32px;
+    color: #777777;
+}
+.copy-right-sec{
+  padding: 1.8rem;
+    background: #000;
+    color: #fff;
+    text-align: center;
+}
+.copy-right-sec a{
+  color: #fcd462;
+    font-weight: 500;
+}
+a{
+  text-decoration:none;
+}
+
+
+/* footer section end */
+
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg fixed-top" style="background-color: black"> <!-- Change here to fixed-top -->
+    <div class="container-fluid">
+    <a class="navbar-brand" style="font-weight: bold; color: white;" href="{% url 'ProjectHomePage' %}"><b>EMS</b></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" style="font-weight:bolder ; ; color:white" href="{% url 'ProjectHomePage' %}">Home </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="font-weight:bold ; color:white" href="{% url 'AboutUs' %}">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="font-weight:bold ; color:white" href="{% url 'OurServices' %}">Our Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="font-weight:bold ; color:white" href="{% url 'ContactUs' %}">Contact Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="font-weight:bold ; color:white" href="{% url 'Gallery' %}">Gallery</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" style="font-weight:bold ; color:blank" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" style="font-weight:bold ; color:Black" href="#">Action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" style="font-weight:bold ; color:Black" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" style="font-weight:bold ; color:Black" href="#">Something else here</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" style="font-weight:bold ; color:black" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" style="font-weight:bold ; background-color: #1C2833" type="submit">Search</button>
+      </form>
+
+  <!--<ul class = "navbar-nav ms auto">
+   <li class="nav-item">
+          <a class="nav-link" style="font-weight: bold; color: white;" href="{% url 'EventManagerHomePage' %}">Event Manager</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="font-weight: bold; color: white;" href="{% url 'EventParticipantHomePage' %}">Event Participant</a>
+        </li>
+      </ul>-->
+      <ul class="navbar-nav ms-auto">
+        <li>
+          {% if user.is_authenticated %}
+          <li class="nav-item">
+            <span class="nav-link" style="font-weight:bold ; color:white">Welcome!!!, {{user.username}}</span>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="font-weight: bold; color: white;" href="{% url 'EventParticipant_module:event_details_list' %}">View Events</a>
+          </li>
+          <li>
+          <div class="profile-dropdown">
+                <img id="current-profile-picture" src="" alt="Profile Picture" class="profile-image">
+                <div class="dropdown-content">
+                     <a href="{% url 'account_details' %}"><i class="fa fa-user"></i> Account</a>
+                        <a href="{% url 'user_profile' %}"><i class="fa fa-user-circle-o"></i> Profile</a>
+                        <a href="{% url 'logout' %}"><i class="fa fa-sign-out"></i> Logout</a>
+                </div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="font-weight:bold ; color:white" href="{% url 'logout' %}">Logout</a>
+          </li>
+          {% else %}
+
+          <li class="nav-item">
+            <a class="nav-link" style="font-weight:bold ; color:white" href="{% url 'login' %}">Login/Register</a>
+          </li>
+          {% endif %}
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+{% block body %}
+
+{% endblock %}
+
+<!-- Include the necessary JavaScript and Popper.js -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+
+
+ <footer id="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <a href="{% url 'ProjectHomePage' %}"><img src="{% static 'images/Home/logo.png' %}" alt="" class="img-fluid logo-footer"></a>
+                      <div class="footer-about">
+                          <p>At the heart of our approach is a commitment to innovation and excellence. We blend creativity with meticulous planning to design events that captivate and inspire. From elegant weddings to dynamic corporate gatherings, we bring a touch of magic to every occasion.  </p>
+                      </div>
+
+          </div>
+          <div class="col-md-3">
+            <div class="useful-link">
+              <h2>Useful Links</h2>
+              <img src="./assets/images/about/home_line.png" alt="" class="img-fluid">
+              <div class="use-links">
+                <li><a href="{% url 'ProjectHomePage' %}"><i class="fa-solid fa-angles-right"></i> Home</a></li>
+                <li><a href="{% url 'AboutUs' %}"><i class="fa-solid fa-angles-right"></i> About Us</a></li>
+                <li><a href="{% url 'Gallery' %}"><i class="fa-solid fa-angles-right"></i> Gallery</a></li>
+                <li><a href="{% url 'ContactUs' %}"><i class="fa-solid fa-angles-right"></i> Contact</a></li>
+              </div>
+            </div>
+
+          </div>
+                    <div class="col-md-3">
+                        <div class="social-links">
+              <h2>Follow Us</h2>
+              <img src="./assets/images/about/home_line.png" alt="">
+              <div class="social-icons">
+                <li><a href=""><i class="fa-brands fa-facebook-f"></i> Facebook</a></li>
+                <li><a href=""><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+                <li><a href=""><i class="fa-brands fa-linkedin-in"></i> Linkedin</a></li>
+              </div>
+            </div>
+
+
+                    </div>
+          <div class="col-md-3">
+            <div class="address">
+              <h2>Address</h2>
+              <img src="./assets/images/about/home_line.png" alt="" class="img-fluid">
+              <div class="address-links">
+                <li class="address1"><i class="fa-solid fa-location-dot"></i> Vaddeswaram, Guntur,India,522502</li>
+                   <li><a href=""><i class="fa-solid fa-phone"></i> +91 7680833146</a></li>
+                   <li><a href=""><i class="fa-solid fa-envelope"></i> sakethkunuku205@gmail.com</a></li>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </footer>
+    <!-- footer section end -->
+    <!-- footer copy right section start -->
+    <section id="copy-right">
+      <div class="copy-right-sec"><i class="fa-solid fa-copyright"></i>
+       Copyright EMS - KL University. All Rights Reserved by <a href="#">KUNUKU SAKETH</a>
+
+
+      </div>
+
+    </section>
+<script>
+        // Load user profile data from localStorage if available
+        window.onload = function() {
+            var loggedInUser = "{{ user.username }}"; // Get the currently logged-in username from the template
+            if (loggedInUser) {
+                var storedProfile = localStorage.getItem(loggedInUser);
+                if (storedProfile) {
+                    var userProfile = JSON.parse(storedProfile);
+                    document.getElementById('current-profile-picture').src = userProfile.profilePicture;
+                }
+            }
+        };
+    </script>
+
+
+</body>
+</html>

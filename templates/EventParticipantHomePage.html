@@ -1,0 +1,116 @@
+{% extends 'Navbar/EventParticipantNavbar.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Participant Home Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        .info-container {
+            margin-bottom: 20px;
+        }
+
+        .info-container p {
+            line-height: 1.6;
+            font-size: 18px;
+        }
+
+        .advantages {
+            margin-bottom: 20px;
+        }
+
+        .advantages h2 {
+            color: #3498db;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .advantages ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .advantages li {
+            margin-bottom: 10px;
+        }
+
+        .cta-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    {% block body %}
+    <div class="container"><br><br>
+        <h1>Event Participant Home Page</h1><br>
+
+        <div class="info-container">
+            <p>
+                Welcome to the Event Management System designed exclusively for participants like you. This platform provides an immersive experience, allowing you to discover, register, and engage with various events seamlessly.
+            </p><br><br>
+            <p>
+                Explore the advantages of using our system and make the most out of your event participation journey.
+            </p>
+        </div>
+
+        <div class="advantages">
+            <br><br>
+            <h2>Key Advantages for Event Participants:</h2>
+            <ul>
+                <li>Effortless Event Discovery: Explore a diverse range of events with ease.</li>
+                <li>Simple Registration Process: Register for events that capture your interest effortlessly.</li>
+                <li>Real-time Updates: Stay informed about event details and receive real-time notifications.</li>
+                <li>Enhanced User Experience: Enjoy a user-friendly interface designed to elevate your event participation.</li>
+                <li>Interactive Event Dashboard: Access a personalized dashboard to manage your registered events.</li>
+                <li>Community Engagement: Connect with fellow participants and event organizers through our integrated community features.</li>
+            </ul>
+        </div>
+
+        <div class="cta-container">
+           <a href="{% url 'EventParticipant_module:event_details_list' %}" class="cta-button"><button>Explore Events Now</button></a>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+</html>

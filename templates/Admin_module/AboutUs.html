@@ -1,0 +1,130 @@
+{% extends 'Navbar/ProjectNavbar.html' %}
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - [Your Company Name]</title>
+  {% block body %}
+  <br><br><br>
+
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    #about-us {
+      background-color: #e9f0f5;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .about-us-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .about-us-text {
+      max-width: 800px;
+      text-align: justify;
+      margin-top: 20px;
+    }
+
+    .about-us-text h2 {
+      color: #3c4858;
+      font-size: 2.5em;
+      font-weight: bold;
+    }
+
+    .about-us-text p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #495057;
+    }
+
+    .about-us-text ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .about-us-text li {
+      margin-bottom: 10px;
+    }
+
+    .about-us-text .highlight {
+      font-weight: bold;
+      color: #007bff;
+    }
+
+    .about-us-image {
+      margin-top: 20px;
+    }
+
+    .about-us-image img {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 8px;
+    }
+
+    @media (min-width: 768px) {
+      .about-us-container {
+        flex-direction: row;
+        align-items: flex-start;
+      }
+
+      .about-us-text {
+        margin-right: 40px;
+      }
+
+      .about-us-image {
+        margin-top: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="content">
+    <section id="about-us">
+      <div class="about-us-container">
+        <div class="about-us-text">
+          <h2>About Us</h2>
+          <p>Welcome to [Your Company Name], where we turn dreams into extraordinary events! Our passion for creating unforgettable experiences sets us apart in the world of event management.</p>
+
+          <p>At the heart of our approach is a commitment to innovation and excellence. We blend creativity with meticulous planning to design events that captivate and inspire. From elegant weddings to dynamic corporate gatherings, we bring a touch of magic to every occasion.</p>
+
+          <p>Why choose Event Management System?</p>
+
+          <ul>
+            <li><span class="highlight">Creative Expertise:</span> Our team of talented designers and planners bring fresh ideas and creativity to the table. We transform your vision into a reality that exceeds expectations.</li>
+            <li><span class="highlight">Attention to Detail:</span> Every detail matters. We obsess over the finer points to ensure a seamless and flawless event execution, leaving you stress-free and able to enjoy the moment.</li>
+            <li><span class="highlight">Client-Centric Approach:</span> Your satisfaction is our priority. We collaborate closely with you, listening to your needs and preferences to tailor each event to perfection.</li>
+            <li><span class="highlight">Innovation:</span> Stay ahead in the world of events with our innovative solutions. We embrace the latest trends and technologies to bring a modern and fresh perspective to your events.</li>
+            <li><span class="highlight">Exceptional Team:</span> Our dedicated team is committed to making your event a success. With a diverse skill set and passion for what we do, we ensure a memorable experience for you and your guests.</li>
+          </ul>
+
+          <p>Join us on a journey of creativity, dedication, and celebration. Let [Your Company Name] be the architect of your next memorable event!</p>
+        </div>
+
+        <div class="about-us-image">
+          <img src="{% static 'images/Home/logo.png' %}" alt="About Us Image"><br><br><br>
+          <img src="{% static 'images/Gallery/samyak.jpeg' %}" alt="About Us Image"><br><br><br>
+          <img src="{% static 'images/Gallery/gall4.jpg' %}" alt="About Us Image"><br>
+
+
+        </div>
+      </div>
+    </section>
+  </div>
+{% endblock %}
+</body>
+
+</html>
